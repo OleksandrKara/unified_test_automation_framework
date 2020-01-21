@@ -47,10 +47,6 @@ public abstract class TestBase extends AbstractTestNGCucumberTests {
      */
     public abstract String getName();
 
-    /**
-     * A page containing the navigation drawer
-     */
-    private NavigationPage navigationPage;
 
     /**
      * Method to initialize the test's page
@@ -101,17 +97,6 @@ public abstract class TestBase extends AbstractTestNGCucumberTests {
         driver.quit();
     }
 
-    /**
-     *
-     *  Creates a navigation page and navigates to the Class' category
-     *  within the navigation drawer
-     *
-     */
-    @BeforeClass
-    public void navigateTo() throws InterruptedException {
-        navigationPage = new NavigationPage(driver);
-        navigationPage.gotoCategory(getName());
-    }
 
     /**
      * Restart the app after every test class to go back to the main
