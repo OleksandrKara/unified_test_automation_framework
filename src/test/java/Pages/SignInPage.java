@@ -28,7 +28,7 @@ public class SignInPage extends BasePage {
         passwordField.click();
         Thread.sleep(KEYBOARD_ANIMATION_DELAY);
         passwordField.sendKeys(password);
-
+        driver.hideKeyboard();
         signInButton.click();
 
         return usernameStatus;
