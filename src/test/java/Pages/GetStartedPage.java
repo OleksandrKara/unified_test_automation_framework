@@ -13,8 +13,16 @@ public class GetStartedPage extends BasePage {
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[5]/android.view.ViewGroup[1]")
     private MobileElement signInButton;
 
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@index=2]")
+    private MobileElement createAccountButton;
+
     public SignInPage NavigateToSignInPage() {
         signInButton.click();
         return new SignInPage(driver);
+    }
+
+    public CreateAccountOptionsPage NavigateToCreateAccountOptionsPage(){
+        createAccountButton.click();
+        return new CreateAccountOptionsPage(driver);
     }
 }
