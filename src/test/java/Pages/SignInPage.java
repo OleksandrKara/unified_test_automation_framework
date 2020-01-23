@@ -22,16 +22,31 @@ public class SignInPage extends BasePage {
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup[1]/android.widget.TextView")
     private MobileElement signInButton;
 
-    public boolean login(String username, String password) throws InterruptedException {
-        boolean usernameStatus = sendKeysToElement(username, usernameField, false);
+    @AndroidFindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.TextView")
+    private MobileElement forgotEmailAddressLink;
 
+    @AndroidFindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[5]/android.widget.TextView")
+    private MobileElement forgotMobileNumberLink;
+
+
+    public DeviceDashboardPage login(String username, String password) throws InterruptedException {
+        boolean usernameStatus = sendKeysToElement(username, usernameField, false);
         passwordField.click();
         Thread.sleep(KEYBOARD_ANIMATION_DELAY);
         passwordField.sendKeys(password);
-
+        driver.hideKeyboard();
         signInButton.click();
+        return new DeviceDashboardPage(driver);
+    }
 
-        return usernameStatus;
+    public CreateAccountOptionsPage NavigateToForgotEmailAddressPage(){
+        forgotEmailAddressLink.click();
+        return new CreateAccountOptionsPage(driver);
+    }
+
+    public CreateAccountOptionsPage NavigateToForgotMobileNumberPage(){
+        forgotMobileNumberLink.click();
+        return new CreateAccountOptionsPage(driver);
     }
 
 }
