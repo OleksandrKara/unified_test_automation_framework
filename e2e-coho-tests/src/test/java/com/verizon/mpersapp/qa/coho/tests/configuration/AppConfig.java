@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @PropertySources({
         @PropertySource("classpath:env/${COHO_ENV:pre-prod}.properties"),
         @PropertySource("classpath:endpoints/endpoints.properties"),
-        @PropertySource("classpath:app/app.properties"),
+        @PropertySource("classpath:common/driver.properties"),
 })
 public class AppConfig {
     @Autowired

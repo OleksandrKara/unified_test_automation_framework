@@ -18,10 +18,7 @@ package com.verizon.mpersapp.qa.coho.tests.pages;
 
 import com.verizon.mpersapp.qa.coho.tests.configuration.WebDriverHelper;
 import com.verizon.mpersapp.qa.coho.tests.configuration.WrappedWebDriver;
-import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 
 /**

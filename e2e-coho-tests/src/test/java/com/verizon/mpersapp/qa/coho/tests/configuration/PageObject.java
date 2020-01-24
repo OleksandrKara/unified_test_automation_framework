@@ -13,5 +13,4 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @Component
 @Lazy
-public @interface PageObject {
-}
+public @interface PageObject {}

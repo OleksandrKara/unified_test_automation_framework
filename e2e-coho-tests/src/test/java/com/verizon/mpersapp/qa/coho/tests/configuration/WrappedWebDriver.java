@@ -2,7 +2,6 @@ package com.verizon.mpersapp.qa.coho.tests.configuration;
 
 import io.appium.java_client.AppiumDriver;
 import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.WebDriver;
 
 @Slf4j
 public class WrappedWebDriver  {

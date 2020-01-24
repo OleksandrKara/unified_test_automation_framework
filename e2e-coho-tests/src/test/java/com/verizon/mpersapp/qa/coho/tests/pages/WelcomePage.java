@@ -7,9 +7,6 @@ import org.springframework.beans.factory.annotation.Value;
 
 @PageObject
 public class WelcomePage extends BasePage {
-    @Value("${site.url:localhost}")
-    private String siteUrl;
-
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]")
     private MobileElement NextButton;
 

@@ -49,45 +49,6 @@ By default DirtiesContext makes one WebDriver per one test scenario
 @DirtiesContext(classMode = AFTER_EACH_TEST_METHOD) - to run single WebDriver session for all tests
  */
 public class BaseStepsDefs {
-    /**
-     * This method runs before any other method.
-     *
-     * Appium follows a client - server model:
-     * We are setting up our appium client in order to connect to Device Farm's appium server.
-     *
-     * We do not need to and SHOULD NOT set our own DesiredCapabilities
-     * Device Farm creates custom settings at the server level. Setting your own DesiredCapabilities
-     * will result in unexpected results and failures.
-     *
-     * @throws MalformedURLException An exception that occurs when the URL is wrong
-     */
-    /*@Before
-    public void setUpAppium() throws MalformedURLException {
-
-        final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
-
-        URL url = new URL(URL_STRING);
-
-        //Use a empty DesiredCapabilities object
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-
-        //Set the DesiredCapabilities capabilities only for local development
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName", "Android Emulator");
-        capabilities.setCapability("appPackage", "com.quintech.mpers");
-        capabilities.setCapability("appActivity", "host.exp.exponent.MainActivity");
-        capabilities.setCapability("udid", "4e51414832313498");
-
-        driver = new AndroidDriver<>(url, capabilities);
-
-        //Use a higher value if your mobile elements take time to show up
-        driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
-    }
-*/
-
-
-
-
     @Value("${mobile.app.username}")
     public String login;
 
@@ -96,7 +57,7 @@ public class BaseStepsDefs {
 
     @Autowired
     @Lazy
-    WelcomePage welcomePage;
+    private WelcomePage welcomePage;
     @Autowired
     @Lazy
     private IntroductionPage introPage;
@@ -114,12 +75,6 @@ public class BaseStepsDefs {
     private static final String FAIL_USER_NAME = "Wrong User";
     private static final String FAIL_PASSWORD = "12345";
     private static final String BAD_TEXT_ENTRY_MSG = "Username sent to text field incorrectly";
-
-
-    //@Override
-    public String getName() {
-        return "Login Page";
-    }
 
     /**
      * Creates a login

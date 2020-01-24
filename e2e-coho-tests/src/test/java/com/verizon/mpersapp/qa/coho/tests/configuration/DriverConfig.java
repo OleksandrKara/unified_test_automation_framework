@@ -4,6 +4,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -16,22 +17,25 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class DriverConfig {
 
+    @Value("${device.udid:emulator-5554}")
+    private String deviceUdid;
+
+    @Value("${platform.name}")
+    private String platformName;
+
     @Bean(destroyMethod = "quit", name = "CoreDriver")
     @Lazy
     public WrappedWebDriver webDriver() throws IOException {
         final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
-
         URL url = new URL(URL_STRING);
-
-        //Use a empty DesiredCapabilities object
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         //Set the DesiredCapabilities capabilities only for local development
-        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("platformName", platformName);
         capabilities.setCapability("deviceName", "Android Emulator");
         capabilities.setCapability("appPackage", "com.quintech.mpers");
         capabilities.setCapability("appActivity", "host.exp.exponent.MainActivity");
-        capabilities.setCapability("udid", "4e51414832313498");
+        capabilities.setCapability("udid", deviceUdid);
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(url, capabilities);
 
         //Use a higher value if your mobile elements take time to show up
