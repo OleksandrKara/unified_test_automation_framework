@@ -32,7 +32,7 @@ public class DriverConfig {
         capabilities.setCapability("appPackage", "com.quintech.mpers");
         capabilities.setCapability("appActivity", "host.exp.exponent.MainActivity");
         capabilities.setCapability("udid", "4e51414832313498");
-        AndroidDriver<MobileElement> driver = new AndroidDriver<>(url, capabilities);
+        AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(url, capabilities);
 
         //Use a higher value if your mobile elements take time to show up
         driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
