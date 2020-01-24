@@ -21,7 +21,7 @@ public class GetStartedPage extends BasePage {
         return new SignInPage(driver);
     }
 
-    public CreateAccountOptionsPage navigateToCreateAccountOptionsPage(){
+    public CreateAccountOptionsPage navigateToCreateAccountOptionsPage() {
         createAccountButton.click();
         return new CreateAccountOptionsPage(driver);
     }

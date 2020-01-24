@@ -4,7 +4,6 @@ import pages.*;
 import tests.AbstractBaseTests.TestBase;
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.en.Given;
-import org.testng.annotations.BeforeTest;
 
 @CucumberOptions(
         strict = true,
@@ -21,7 +20,8 @@ public class AdjustVolumeTest extends TestBase {
     private SignInPage signInPage;
     private DeviceDashboardPage deviceDashboardPage;
     private ManageDevicesPage manageDevicePage;
-    private  CareSmartWatchSettingsPage careSmartWatchSettingsPage;
+    private CareSmartWatchSettingsPage careSmartWatchSettingsPage;
+
     public String getName() {
         return "Adjust Volume Test";
     }
@@ -35,11 +35,11 @@ public class AdjustVolumeTest extends TestBase {
     public void loginSuccess() throws InterruptedException {
         Thread.sleep(5000);
         introPage = welcomePage.navigateToIntroductionPage();
-        getStartedPage=introPage.navigateToGetStartedPage();
-        signInPage=getStartedPage.navigateToSignInPage();
-        deviceDashboardPage=signInPage.login("olexandr.kara@gmail.com","Verizon91@");
-        manageDevicePage=deviceDashboardPage.navigateToManageDevicesPage();
-        careSmartWatchSettingsPage=manageDevicePage.navigateToCareSmartWatchSettingsPage();
+        getStartedPage = introPage.navigateToGetStartedPage();
+        signInPage = getStartedPage.navigateToSignInPage();
+        deviceDashboardPage = signInPage.login("olexandr.kara@gmail.com", "Verizon91@");
+        manageDevicePage = deviceDashboardPage.navigateToManageDevicesPage();
+        careSmartWatchSettingsPage = manageDevicePage.navigateToCareSmartWatchSettingsPage();
         careSmartWatchSettingsPage.adjustVolume();
     }
 }

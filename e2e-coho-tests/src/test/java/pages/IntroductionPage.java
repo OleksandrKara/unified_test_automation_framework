@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class IntroductionPage extends BasePage{
+public class IntroductionPage extends BasePage {
 
     protected IntroductionPage(AppiumDriver driver) {
         super(driver);

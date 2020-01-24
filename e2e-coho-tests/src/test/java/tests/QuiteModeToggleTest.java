@@ -4,7 +4,6 @@ import pages.*;
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.en.Given;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import tests.AbstractBaseTests.TestBase;
 
 @CucumberOptions(
@@ -22,7 +21,7 @@ public class QuiteModeToggleTest extends TestBase {
     private SignInPage signInPage;
     private DeviceDashboardPage deviceDashboardPage;
     private ManageDevicesPage manageDevicePage;
-    private  CareSmartWatchSettingsPage careSmartWatchSettingsPage;
+    private CareSmartWatchSettingsPage careSmartWatchSettingsPage;
 
 
     public String getName() {
@@ -38,11 +37,11 @@ public class QuiteModeToggleTest extends TestBase {
     public void loginSuccess() throws InterruptedException {
         Thread.sleep(5000);
         introPage = welcomePage.navigateToIntroductionPage();
-        getStartedPage=introPage.navigateToGetStartedPage();
-        signInPage=getStartedPage.navigateToSignInPage();
-        deviceDashboardPage=signInPage.login("olexandr.kara@gmail.com","Verizon91@");
-        manageDevicePage=deviceDashboardPage.navigateToManageDevicesPage();
-        careSmartWatchSettingsPage=manageDevicePage.navigateToCareSmartWatchSettingsPage();
+        getStartedPage = introPage.navigateToGetStartedPage();
+        signInPage = getStartedPage.navigateToSignInPage();
+        deviceDashboardPage = signInPage.login("olexandr.kara@gmail.com", "Verizon91@");
+        manageDevicePage = deviceDashboardPage.navigateToManageDevicesPage();
+        careSmartWatchSettingsPage = manageDevicePage.navigateToCareSmartWatchSettingsPage();
         Assert.assertTrue(careSmartWatchSettingsPage.toggleQuiteMode());
     }
 }

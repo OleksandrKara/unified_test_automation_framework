@@ -32,9 +32,9 @@ public class CreateAccountTest extends TestBase {
     public void createAccountSuccess() throws InterruptedException {
         Thread.sleep(5000);
         introPage = welcomePage.navigateToIntroductionPage();
-        getStartedPage=introPage.navigateToGetStartedPage();
-        createAccountOptionsPage=getStartedPage.navigateToCreateAccountOptionsPage();
-        createAccountPage=createAccountOptionsPage.navigateToCreateAccountPage();
+        getStartedPage = introPage.navigateToGetStartedPage();
+        createAccountOptionsPage = getStartedPage.navigateToCreateAccountOptionsPage();
+        createAccountPage = createAccountOptionsPage.navigateToCreateAccountPage();
         createAccountPage.createAccount("Test", "8134038630", "saikrishna.goli@verizon.com", "Verizon19@");
     }
 }

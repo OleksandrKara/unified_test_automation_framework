@@ -16,7 +16,7 @@ public class CreateAccountOptionsPage extends BasePage {
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index=1]")
     private MobileElement createAccountUsingGoogleButton;
 
-    public CreateAccountPage navigateToCreateAccountPage(){
+    public CreateAccountPage navigateToCreateAccountPage() {
         createAccountUsingEmailAddressButton.click();
         return new CreateAccountPage(driver);
     }
