@@ -37,29 +37,28 @@ public abstract class BasePage {
 
     /**
      * A base constructor that sets the page's driver
-     *
+     * <p>
      * The page structure is being used within this test in order to separate the
      * page actions from the tests.
-     *
+     * <p>
      * Please use the AppiumFieldDecorator class within the page factory. This way annotations
      * like @AndroidFindBy within the page objects.
      *
      * @param driver the appium driver created in the beforesuite method.
      */
-    protected BasePage(AppiumDriver driver){
+    protected BasePage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, 50, TimeUnit.SECONDS), this);
     }
 
     /**
      * Tries three times to send text to element properly.
-     *
+     * <p>
      * Note: This method was needed because Appium sometimes sends text to textboxes incorrectly.
      *
-     * @param input String to be sent
-     * @param element WebElement to receive text, cannot be a secure text field.
+     * @param input         String to be sent
+     * @param element       WebElement to receive text, cannot be a secure text field.
      * @param appendNewLine true to append a new line character to incoming string when sending to element, else false
-     *
      * @return true if keys were successfully sent, otherwise false.
      */
     protected boolean sendKeysToElement(String input, WebElement element, boolean appendNewLine) throws InterruptedException {

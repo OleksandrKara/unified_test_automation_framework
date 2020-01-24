@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * An abstract base for all of the Android tests within this package
- *
+ * <p>
  * Responsible for setting up the Appium test Driver
  */
 public abstract class TestBase extends AbstractTestNGCucumberTests {
@@ -56,10 +56,10 @@ public abstract class TestBase extends AbstractTestNGCucumberTests {
 
     /**
      * This method runs before any other method.
-     *
+     * <p>
      * Appium follows a client - server model:
      * We are setting up our appium client in order to connect to Device Farm's appium server.
-     *
+     * <p>
      * We do not need to and SHOULD NOT set our own DesiredCapabilities
      * Device Farm creates custom settings at the server level. Setting your own DesiredCapabilities
      * will result in unexpected results and failures.
