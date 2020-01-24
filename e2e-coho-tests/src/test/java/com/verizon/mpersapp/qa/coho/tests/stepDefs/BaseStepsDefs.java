@@ -16,25 +16,17 @@
 package com.verizon.mpersapp.qa.coho.tests.stepDefs;
 
 import com.verizon.mpersapp.qa.coho.tests.configuration.AppConfig;
-import com.verizon.mpersapp.qa.coho.tests.configuration.WrappedWebDriver;
 import com.verizon.mpersapp.qa.coho.tests.pages.GetStartedPage;
 import com.verizon.mpersapp.qa.coho.tests.pages.IntroductionPage;
 import com.verizon.mpersapp.qa.coho.tests.pages.SignInPage;
 import com.verizon.mpersapp.qa.coho.tests.pages.WelcomePage;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.After;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
-
-import java.net.MalformedURLException;
 
 /**
  * An abstract base for all of the Android tests within this package
@@ -67,14 +59,6 @@ public class BaseStepsDefs {
     @Autowired
     @Lazy
     private SignInPage signInPage;
-
-    private static final String LOGIN_SUCCESS_MESSAGE = "You are logged on as admin";
-    private static final String LOGIN_FAIL_MESSAGE = "You gave me the wrong username and password";
-    private static final String CORRECT_USER_NAME = "admin";
-    private static final String CORRECT_PASSWORD = "password";
-    private static final String FAIL_USER_NAME = "Wrong User";
-    private static final String FAIL_PASSWORD = "12345";
-    private static final String BAD_TEXT_ENTRY_MSG = "Username sent to text field incorrectly";
 
     /**
      * Creates a login

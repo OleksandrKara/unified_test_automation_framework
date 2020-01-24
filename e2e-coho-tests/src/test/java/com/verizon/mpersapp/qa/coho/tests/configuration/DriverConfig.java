@@ -23,6 +23,9 @@ public class DriverConfig {
     @Value("${platform.name}")
     private String platformName;
 
+    @Value("${aws.farm.run}")
+    private boolean isAwsFarmEnabled;
+
     @Bean(destroyMethod = "quit", name = "CoreDriver")
     @Lazy
     public WrappedWebDriver webDriver() throws IOException {
@@ -31,11 +34,13 @@ public class DriverConfig {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         //Set the DesiredCapabilities capabilities only for local development
-        capabilities.setCapability("platformName", platformName);
-        capabilities.setCapability("deviceName", "Android Emulator");
-        capabilities.setCapability("appPackage", "com.quintech.mpers");
-        capabilities.setCapability("appActivity", "host.exp.exponent.MainActivity");
-        capabilities.setCapability("udid", deviceUdid);
+        if (!isAwsFarmEnabled) {
+            capabilities.setCapability("platformName", platformName);
+            capabilities.setCapability("deviceName", "Android Emulator");
+            capabilities.setCapability("appPackage", "com.quintech.mpers");
+            capabilities.setCapability("appActivity", "host.exp.exponent.MainActivity");
+            capabilities.setCapability("udid", deviceUdid);
+        }
         AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(url, capabilities);
 
         //Use a higher value if your mobile elements take time to show up

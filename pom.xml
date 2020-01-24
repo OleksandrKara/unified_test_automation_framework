@@ -233,7 +233,7 @@
                             <finalName>zip-with-dependencies</finalName>
                             <appendAssemblyId>false</appendAssemblyId>
                             <descriptors>
-                                <descriptor>e2e-coho-tests/src/main/assembly/zip.xml</descriptor>
+                                <descriptor>zip.xml</descriptor>
                             </descriptors>
                         </configuration>
                     </execution>
