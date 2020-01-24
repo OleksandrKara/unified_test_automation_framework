@@ -1,7 +1,7 @@
-package Tests;
+package tests;
 
-import Pages.*;
-import Tests.AbstractBaseTests.TestBase;
+import pages.*;
+import tests.AbstractBaseTests.TestBase;
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.en.Given;
 import org.testng.annotations.BeforeTest;
@@ -34,12 +34,12 @@ public class AdjustVolumeTest extends TestBase {
     @Given("^Increase the volume$")
     public void loginSuccess() throws InterruptedException {
         Thread.sleep(5000);
-        introPage = welcomePage.NavigateToIntroductionPage();
-        getStartedPage=introPage.NavigateToGetStartedPage();
-        signInPage=getStartedPage.NavigateToSignInPage();
+        introPage = welcomePage.navigateToIntroductionPage();
+        getStartedPage=introPage.navigateToGetStartedPage();
+        signInPage=getStartedPage.navigateToSignInPage();
         deviceDashboardPage=signInPage.login("olexandr.kara@gmail.com","Verizon91@");
-        manageDevicePage=deviceDashboardPage.NavigateToManageDevicesPage();
-        careSmartWatchSettingsPage=manageDevicePage.NavigateToCareSmartWatchSettingsPage();
+        manageDevicePage=deviceDashboardPage.navigateToManageDevicesPage();
+        careSmartWatchSettingsPage=manageDevicePage.navigateToCareSmartWatchSettingsPage();
         careSmartWatchSettingsPage.adjustVolume();
     }
 }

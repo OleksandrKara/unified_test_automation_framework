@@ -14,7 +14,7 @@ public class DeviceDashboardPage extends BasePage {
     private MobileElement careSmartWatchTab;
 
 
-    public ManageDevicesPage NavigateToManageDevicesPage() {
+    public ManageDevicesPage navigateToManageDevicesPage() {
         careSmartWatchTab.click();
         return new ManageDevicesPage(driver);
     }

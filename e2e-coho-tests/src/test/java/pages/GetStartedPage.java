@@ -16,12 +16,12 @@ public class GetStartedPage extends BasePage {
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index=2]")
     private MobileElement createAccountButton;
 
-    public SignInPage NavigateToSignInPage() {
+    public SignInPage navigateToSignInPage() {
         signInButton.click();
         return new SignInPage(driver);
     }
 
-    public CreateAccountOptionsPage NavigateToCreateAccountOptionsPage(){
+    public CreateAccountOptionsPage navigateToCreateAccountOptionsPage(){
         createAccountButton.click();
         return new CreateAccountOptionsPage(driver);
     }

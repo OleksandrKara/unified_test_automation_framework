@@ -39,12 +39,12 @@ public class SignInPage extends BasePage {
         return new DeviceDashboardPage(driver);
     }
 
-    public CreateAccountOptionsPage NavigateToForgotEmailAddressPage(){
+    public CreateAccountOptionsPage navigateToForgotEmailAddressPage(){
         forgotEmailAddressLink.click();
         return new CreateAccountOptionsPage(driver);
     }
 
-    public CreateAccountOptionsPage NavigateToForgotMobileNumberPage(){
+    public CreateAccountOptionsPage navigateToForgotMobileNumberPage(){
         forgotMobileNumberLink.click();
         return new CreateAccountOptionsPage(driver);
     }

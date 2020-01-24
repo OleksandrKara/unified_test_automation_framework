@@ -1,11 +1,11 @@
-package Tests;
+package tests;
 
-import Pages.*;
-import Tests.AbstractBaseTests.TestBase;
+import pages.*;
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.en.Given;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
+import tests.AbstractBaseTests.TestBase;
 
 @CucumberOptions(
         strict = true,
@@ -37,12 +37,12 @@ public class QuiteModeToggleTest extends TestBase {
     @Given("^Enable Quite Mode$")
     public void loginSuccess() throws InterruptedException {
         Thread.sleep(5000);
-        introPage = welcomePage.NavigateToIntroductionPage();
-        getStartedPage=introPage.NavigateToGetStartedPage();
-        signInPage=getStartedPage.NavigateToSignInPage();
+        introPage = welcomePage.navigateToIntroductionPage();
+        getStartedPage=introPage.navigateToGetStartedPage();
+        signInPage=getStartedPage.navigateToSignInPage();
         deviceDashboardPage=signInPage.login("olexandr.kara@gmail.com","Verizon91@");
-        manageDevicePage=deviceDashboardPage.NavigateToManageDevicesPage();
-        careSmartWatchSettingsPage=manageDevicePage.NavigateToCareSmartWatchSettingsPage();
+        manageDevicePage=deviceDashboardPage.navigateToManageDevicesPage();
+        careSmartWatchSettingsPage=manageDevicePage.navigateToCareSmartWatchSettingsPage();
         Assert.assertTrue(careSmartWatchSettingsPage.toggleQuiteMode());
     }
 }

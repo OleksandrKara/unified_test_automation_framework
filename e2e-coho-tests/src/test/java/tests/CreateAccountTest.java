@@ -1,9 +1,9 @@
-package Tests;
+package tests;
 
-import Pages.*;
-import Tests.AbstractBaseTests.TestBase;
+import pages.*;
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.en.Given;
+import tests.AbstractBaseTests.TestBase;
 
 @CucumberOptions(
         strict = true,
@@ -31,10 +31,10 @@ public class CreateAccountTest extends TestBase {
     @Given("^All valid input values$")
     public void createAccountSuccess() throws InterruptedException {
         Thread.sleep(5000);
-        introPage = welcomePage.NavigateToIntroductionPage();
-        getStartedPage=introPage.NavigateToGetStartedPage();
-        createAccountOptionsPage=getStartedPage.NavigateToCreateAccountOptionsPage();
-        createAccountPage=createAccountOptionsPage.NavigateToCreateAccountPage();
+        introPage = welcomePage.navigateToIntroductionPage();
+        getStartedPage=introPage.navigateToGetStartedPage();
+        createAccountOptionsPage=getStartedPage.navigateToCreateAccountOptionsPage();
+        createAccountPage=createAccountOptionsPage.navigateToCreateAccountPage();
         createAccountPage.createAccount("Test", "8134038630", "saikrishna.goli@verizon.com", "Verizon19@");
     }
 }

@@ -66,9 +66,9 @@ public class LoginTest extends TestBase {
     @Given("^username is correct$")
     public void loginSuccess() throws InterruptedException {
         Thread.sleep(5000);
-        introPage = welcomePage.NavigateToIntroductionPage();
-        getStartedPage=introPage.NavigateToGetStartedPage();
-        signInPage=getStartedPage.NavigateToSignInPage();
+        introPage = welcomePage.navigateToIntroductionPage();
+        getStartedPage=introPage.navigateToGetStartedPage();
+        signInPage=getStartedPage.navigateToSignInPage();
         signInPage.login("olexandr.kara@gmail.com","Verizon91@");
     }
 }
