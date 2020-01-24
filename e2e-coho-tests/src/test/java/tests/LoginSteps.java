@@ -33,7 +33,7 @@ import tests.AbstractBaseTests.TestBase;
         features = "classpath:LoginTest",
         plugin = {"pretty"}
 )
-public class LoginTest extends TestBase {
+public class LoginSteps extends TestBase {
     private static final String LOGIN_SUCCESS_MESSAGE = "You are logged on as admin";
     private static final String LOGIN_FAIL_MESSAGE = "You gave me the wrong username and password";
     private static final String CORRECT_USER_NAME = "admin";

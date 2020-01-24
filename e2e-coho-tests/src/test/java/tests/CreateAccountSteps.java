@@ -11,7 +11,7 @@ import tests.AbstractBaseTests.TestBase;
         features = "classpath:CreateAccountTest",
         plugin = {"pretty"}
 )
-public class CreateAccountTest extends TestBase {
+public class CreateAccountSteps extends TestBase {
     private WelcomePage welcomePage;
     private IntroductionPage introPage;
     private GetStartedPage getStartedPage;

@@ -1,9 +1,10 @@
 package tests;
 
 import pages.*;
-import tests.AbstractBaseTests.TestBase;
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.en.Given;
+import org.testng.Assert;
+import tests.AbstractBaseTests.TestBase;
 
 @CucumberOptions(
         strict = true,
@@ -12,7 +13,7 @@ import cucumber.api.java.en.Given;
         plugin = {"pretty"}
 )
 
-public class AdjustVolumeTest extends TestBase {
+public class QuiteModeToggleSteps extends TestBase {
 
     private WelcomePage welcomePage;
     private IntroductionPage introPage;
@@ -22,16 +23,17 @@ public class AdjustVolumeTest extends TestBase {
     private ManageDevicesPage manageDevicePage;
     private CareSmartWatchSettingsPage careSmartWatchSettingsPage;
 
+
     public String getName() {
-        return "Adjust Volume Test";
+        return "Quite Mode Toggle Test";
     }
 
-    @Given("^I navigate to the Care Smart Watch Settings Page etc")
+    @Given("^I navigate to the Care Smart Watch Settings Page")
     public void setUpPage() {
         welcomePage = new WelcomePage(driver);
     }
 
-    @Given("^Increase the volume$")
+    @Given("^Enable Quite Mode$")
     public void loginSuccess() throws InterruptedException {
         Thread.sleep(5000);
         introPage = welcomePage.navigateToIntroductionPage();
@@ -40,6 +42,6 @@ public class AdjustVolumeTest extends TestBase {
         deviceDashboardPage = signInPage.login("olexandr.kara@gmail.com", "Verizon91@");
         manageDevicePage = deviceDashboardPage.navigateToManageDevicesPage();
         careSmartWatchSettingsPage = manageDevicePage.navigateToCareSmartWatchSettingsPage();
-        careSmartWatchSettingsPage.adjustVolume();
+        Assert.assertTrue(careSmartWatchSettingsPage.toggleQuiteMode());
     }
 }
