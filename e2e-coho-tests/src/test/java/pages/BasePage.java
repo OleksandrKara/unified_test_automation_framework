@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package Pages;
+package pages;
 
 
 import io.appium.java_client.AppiumDriver;

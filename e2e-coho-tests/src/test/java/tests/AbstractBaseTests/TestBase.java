@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package Tests.AbstractBaseTests;
+package tests.AbstractBaseTests;
 
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
@@ -81,7 +81,7 @@ public abstract class TestBase extends AbstractTestNGCucumberTests {
         capabilities.setCapability("deviceName", "Android Emulator");
         capabilities.setCapability("appPackage", "com.quintech.mpers");
         capabilities.setCapability("appActivity", "host.exp.exponent.MainActivity");
-        capabilities.setCapability("udid", "emulator-5554");
+        capabilities.setCapability("udid", "4e51414832313498");
 
         driver = new AndroidDriver<MobileElement>(url, capabilities);
 

@@ -13,20 +13,14 @@
  * permissions and limitations under the License.
  */
 
-package Tests;
+package tests;
 
-import Pages.*;
+import pages.*;
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 
 
-import Tests.AbstractBaseTests.TestBase;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import tests.AbstractBaseTests.TestBase;
 
 /**
  * Tests for a login page

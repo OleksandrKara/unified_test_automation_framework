@@ -1,0 +1,15 @@
+# IntelliJ project files
+.idea/
+*.iml
+out
+gen
+target/
+allure-results/
+.allure/
+**/*.mp4
+**/*.xlsx
+.settings
+.project
+**/.classpath
+**/.factorypath
+**/bin

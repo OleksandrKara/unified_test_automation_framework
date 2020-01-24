@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package Pages;
+package pages;
 
 public class WaitConfig {
     public static final int DRAWER_ANIMATION_WAIT = 2000;

@@ -1,10 +1,9 @@
-package Pages;
+package pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.openqa.selenium.interactions.touch.TouchActions;
 
 public class CareSmartWatchSettingsPage extends BasePage {
 
